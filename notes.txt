@@ -1,9 +1,11 @@
-https://freefrontend.com/css-text-animations/
+https://freefrontend.com/css-text-animations/ - css text animations idead
 
-https://codepen.io/ambercheydesigns/pen/YzPgOvy
+https://codepen.io/ambercheydesigns/pen/YzPgOvy - glow pulsing
 
-https://codepen.io/acupoftee/pen/RwNXxyq
+https://codepen.io/acupoftee/pen/RwNXxyq - glow blink
 
-https://codepen.io/qpi65/pen/LYNOXJO
+https://codepen.io/qpi65/pen/LYNOXJO - glow text
 
-https://codepen.io/SitePoint/pen/XWarjrX
+https://codepen.io/SitePoint/pen/XWarjrX - writing text
+
+https://stackoverflow.com/questions/19215517/attaching-a-scss-to-html-docs

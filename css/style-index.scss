@@ -59,6 +59,9 @@ body {
   background-position: center center;
   background-size: cover;
   position: fixed;
+  transition: all .5s;
+  animation: blink-logo 5s infinite reverse,
+  move-logo 5s infinite ease-in-out reverse;
 }
 
 .spotify-red {
@@ -74,8 +77,9 @@ body {
   background-size: cover;
   position: fixed;
   z-index: 2;
-  animation: blink-logo 5s infinite ease-in-out,
-    move-logo 10s infinite ease-in-out;
+  transition: all .5s;
+  animation: blink-logo 5s infinite,
+  move-logo 5s infinite ease-in-out 0.8s;
 }
 
 @keyframes blink-logo {
@@ -206,27 +210,14 @@ body {
 
 @keyframes move-logo {
   0% {
-    transform: translate(0.5px, 0.5px);
+    transform: translate(-1px, 1.5px);
   }
 
-  20% {
-    transform: translate(-0.5px, 0.5px);
+  50% {
+    transform: translate(1px, -1.5px);
   }
-
-  40% {
-    transform: translate(0.5px, -0.5px);
-  }
-
-  60% {
-    transform: translate(-0.5px, 0.5px);
-  }
-
-  80% {
-    transform: translate(-0.5px, -0.5px);
-  }
-
-  100% {
-    transform: translate(0.5px, -0.5px);
+  to {
+    transform: translate(-1px, 1.5px);
   }
 }
 
