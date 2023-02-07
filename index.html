@@ -3,26 +3,104 @@
   <head>
     <title>ATEK0</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/talktome.css" />
+    <link rel="stylesheet" type="text/css" href="./css/modalbtn.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8" />
   </head>
   <body>
-    <div class="bg-index">
+    <div class="cortina" id="cortina">
+      <div class="presentation-text">
+        <h1 class="present-title">Welcome</h1>
+      </div>
+      <div class="wrapper">
+        <div class="typing-demo">
+          to the office...
+        </div>
+      </div>
+    </div>
+    
+    <div class="first-card">
       <div class="spotify-red"></div>
       <div class="spotify-red-off"></div>
       <div class="overlay-dark">
         <div class="spotify-white1"></div>
         <div class="spotify-red"></div>
       </div>
-      <div class="text-place">
-        <div class="name-text">Afonso Almeida</div>
-        <div class='container'>
-          <p>Hello! I am <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+      
+        <div class="text-place">
+          <div class="name-text">Afonso Almeida</div>
+          <div class="containerhello">
+            <p style="margin:0;">
+              Hello! I'm <span class="typed-text neonText" id="typed-text"></span><span class="cursor">&nbsp;</span>
+            </p>
+          </div>
+        </div>
+        <div class="socials">
+          <a href="https://www.instagram.com/oafonsoalmeida/" target="_blank"><img class="insta" src="Mockup perfil/instalogo.png"/></a>
+          <a href="https://www.linkedin.com/in/afonso-almeida-b32733232/" target="_blank"><img class="lkdn" src="Mockup perfil/lnlogo.png"/></a>
+          <a href="https://www.facebook.com/profile.php?id=100012831364074" target="_blank"><img class="fb" src="Mockup perfil/logofacebook.png"/></a>
+          <div data-toggle="modal" data-target="#exampleModal" class="buttontalk">Talk to me</div>
+        </div>
+        
+        <img class="meimg" style="width: 30%;" src="images/me.png"/>
+    </div>
+
+
+    <!-- Modal Contact Form -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">I know i was the right guy!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div> 
+          <div class="modal-body">
+            <form action="https://formsubmit.co/523f626d95f33a1dca5e836206a8944a" method="POST">
+              <label>Dont be afraid to get in contact, I will answer as soon as possible</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">Name</span>
+                </div>
+                <input type="text" class="form-control" name="Name" required id="basic-url" aria-describedby="basic-addon3">
+              </div>
+
+
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">Email</span>
+                </div>
+                <input type="email" class="form-control" name="Email" required id="basic-url" aria-describedby="basic-addon3">
+              </div>
+
+
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Message</span>
+                </div>
+                <textarea class="form-control" required name="message" aria-label="With textarea"></textarea>
+              </div>
+          </div>
+
+          <div style="margin: 10px;"class="ta-r padB150">
+            <button class="buttonmodal cancel-btn" >
+            Cancel
+            </button>
+            <button class="buttonmodal accept-btn" >
+            Send
+            </button>
+          </div>
+          </form>
         </div>
       </div>
     </div>
-  <script src="./scripts/text-write.js">
 
-  </script>
 
+    <script src="./scripts/text-write.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
   </body>
 </html>

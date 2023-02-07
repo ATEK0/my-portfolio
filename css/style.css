@@ -1,283 +1,491 @@
-body {
-    width: 100%;
-    height: 100%;
-    /*background-image: url("../images/bg.jpg");*/
+@font-face {
+  font-family: mustard;
+  src: url('fonts/mustard.ttf');
+}
+
+
+
+@keyframes load_in {
+  0% {
+    opacity: 0;
   }
-  
-  .bg-index {
-    background-image: url("../images/bg1.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-  }
-  
-  .name-text {
-    color: white;
-    font: 75px Oswald, "sans-serif";
-  }
-  
-  
-  .text-place {
-    z-index: 3;
-    margin-top: 13vw;
-    margin-left: 6vw;
-    z-index: 3;
-    position: relative;
-  }
-  
-  .overlay-dark {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    background-color: black;
-    opacity: 0.57;
-    z-index: 0;
-  }
-  
-  .spotify-white1 {
+
+  100%{
     opacity: 1;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    background-image: url("../images/spotify1.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-    position: fixed;
-    transition: all .5s;
-    animation: blink-logo 5s infinite reverse,
+  }
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+
+/*Animação entrada*/
+
+.cortina {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+  background-color: black;
+  position: fixed;
+  z-index: 5;
+  animation: move-cortina 2s 8s ease-in-out;
+}
+
+.presentation-text {
+  width: 100%;
+  text-align: center;
+}
+
+.present-title {
+  transform: translateY(40vh);
+  font-family: oswald;
+  color: #FA1C16;
+  text-shadow:
+    0 0 7px #fa1e16dc,
+    0 0 10px #fa1e16c0,
+    0 0 21px #fa1e1681;
+  font-size: 5em;
+  margin: 0;
+  position: relative;
+  animation: stay-white 4s, color-change 4s 2s forwards ease-in-out, blink-logo 3s 6s infinite;
+}
+
+.wrapper {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.typing-demo {
+  padding: 20px;
+  width: 17ch;
+  color: #FA1C16;
+  text-shadow:
+    0 0 7px #fa1e16dc,
+    0 0 10px #fa1e16c0,
+    0 0 21px #fa1e1681;
+  animation: stay-white 4s,typing2 1s steps(16), blink2 .5s step-end infinite, color-change 4s 2s forwards ease-in-out, blink-logo 4s 6s infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 3em;
+}
+
+@keyframes move-cortina {
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes stay-cortina {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes stay-white {
+  from {
+    color: white;
+    text-shadow: none;
+  }
+  to{
+    color: white;
+    text-shadow: none;
+  }
+}
+
+@keyframes typing2 {
+  from {
+    color:white;
+    text-shadow: none;
+    width: 0
+  }
+}
+    
+@keyframes blink2 {
+  50% {
+    border-color: transparent
+  }
+}
+
+@keyframes color-change {
+  0% {
+    color: white;
+  }
+
+  50% {
+    color: #FA1C16;
+  text-shadow:
+    0 0 7px #fa1e16dc,
+    0 0 10px #fa1e16c0,
+    0 0 21px #fa1e1681;
+  }
+}
+
+/*Fim animação entrada*/
+
+.name-text {
+  color: white;
+  font-size: 70px;
+  font-family:mustard;
+}
+
+.text-place {
+  z-index: 3;
+  margin-top: 13vw;
+  margin-left: 6vw;
+  position: relative;
+}
+
+.overlay-dark {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: black;
+  opacity: 0.57;
+  z-index: 0;
+}
+
+.spotify-white1 {
+  opacity: 1;
+  width: 99%;
+  height: 99%;
+  top: 0px;
+  left: 0px;
+  background-image: url("../images/spotify1.png");
+  background-repeat: no-repeat;
+
+  background-position: center center;
+  background-size: cover;
+  transition: all 0.5s;
+  animation: blink-logo 5s infinite reverse,
     move-logo 5s infinite ease-in-out reverse;
-  }
-  
-  .spotify-red {
+  position: absolute;
+}
+
+.spotify-red {
+  opacity: 1;
+  width: 99%;
+  height: 99%;
+  top: 0px;
+  left: 0px;
+  background-image: url("../images/spotify-red.png");
+  background-repeat: no-repeat;
+
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  z-index: 2;
+  transition: all 0.5s;
+  animation: blink-logo 5s infinite, move-logo 5s infinite ease-in-out 0.8s;
+  padding: -200px;
+}
+
+@keyframes blink-logo {
+  from {
     opacity: 1;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    background-image: url("../images/spotify-red.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-    position: fixed;
-    z-index: 2;
-    transition: all .5s;
-    animation: blink-logo 5s infinite,
-    move-logo 5s infinite ease-in-out 0.8s;
   }
-  
-  @keyframes blink-logo {
-    from {
-      opacity: 1;
-    }
-  
-    4% {
-      opacity: 0.9;
-    }
-  
-    6% {
-      opacity: 0.85;
-    }
-  
-    8% {
-      opacity: 0.95;
-    }
-  
-    10% {
-      opacity: 0.9;
-    }
-  
-    11% {
-      opacity: 0.922;
-    }
-  
-    12% {
-      opacity: 0.9;
-    }
-  
-    14% {
-      opacity: 0.95;
-    }
-  
-    16% {
-      opacity: 0.98;
-    }
-  
-    17% {
-      opacity: 0.9;
-    }
-  
-    19% {
-      opacity: 0.93;
-    }
-  
-    20% {
-      opacity: 0.99;
-    }
-  
-    24% {
-      opacity: 1;
-    }
-  
-    26% {
-      opacity: 0.94;
-    }
-  
-    28% {
-      opacity: 0.98;
-    }
-  
-    37% {
-      opacity: 0.93;
-    }
-  
-    38% {
-      opacity: 0.5;
-    }
-  
-    39% {
-      opacity: 0.96;
-    }
-  
-    42% {
-      opacity: 1;
-    }
-  
-    44% {
-      opacity: 0.97;
-    }
-  
-    46% {
-      opacity: 0.94;
-    }
-  
-    56% {
-      opacity: 0.9;
-    }
-  
-    58% {
-      opacity: 0.9;
-    }
-  
-    60% {
-      opacity: 0.99;
-    }
-  
-    68% {
-      opacity: 1;
-    }
-  
-    70% {
-      opacity: 0.9;
-    }
-  
-    72% {
-      opacity: 0.95;
-    }
-  
-    93% {
-      opacity: 0.93;
-    }
-  
-    95% {
-      opacity: 0.95;
-    }
-  
-    97% {
-      opacity: 0.93;
-    }
-  
-    to {
-      opacity: 1;
-    }
+
+  4% {
+    opacity: 0.9;
   }
-  
-  @keyframes move-logo {
-    0% {
-      transform: translate(-1px, 1.5px);
-    }
-  
-    50% {
-      transform: translate(1px, -1.5px);
-    }
-    to {
-      transform: translate(-1px, 1.5px);
-    }
+
+  6% {
+    opacity: 0.85;
   }
-  
-  .spotify-red-off {
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
     opacity: 1;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    background-image: url("../images/spotify-red-off.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-    position: fixed;
-    z-index: 1;
-    animation: move-logo 10s infinite ease-in-out;
   }
-  
-  .container {
-    display: inline-block;
-    z-index: 5;
+
+  26% {
+    opacity: 0.94;
   }
-  .container p {
-    font-size: 3rem;
-    padding: 0.5rem;
-    font-weight: bold;
-    color: white;
-    letter-spacing: 0.1rem;
-    text-align: center;
-    overflow: hidden;
+
+  28% {
+    opacity: 0.98;
   }
-  .container p span.typed-text {
-    font-weight: normal;
-    color: red;
+
+  37% {
+    opacity: 0.93;
   }
-  .container p span.cursor {
-    display: inline-block;
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes move-logo {
+  0% {
+    transform: translate(-1px, 1.5px);
+  }
+
+  50% {
+    transform: translate(1px, -1.5px);
+  }
+  to {
+    transform: translate(-1px, 1.5px);
+  }
+}
+
+.spotify-red-off {
+  opacity: 1;
+  width: 99%;
+  height: 99%;
+  top: 0px;
+  left: 0px;
+  background-image: url("../images/spotify-red-off.png");
+  background-repeat: no-repeat;
+
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+  animation: move-logo 10s infinite ease-in-out;
+  padding: -200px;
+}
+
+span.typed-text {
+  padding: 10px;
+}
+
+.meimg {
+  position: in;
+  z-index: 6;
+  margin-left: 55vw;
+  margin-top: -50vh;
+  z-index: 3;
+  opacity: 0.9;
+  animation: floating 9s infinite ease-in-out;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(10px);
+  }
+  50%{
+    transform: translateY(-10px);
+  }
+  to{
+    transform: translateY(10px);
+  }
+}
+
+.socials {
+  display: inline-flex;
+  position: inherit;
+  z-index: 2;
+  margin-left: 6vw;
+}
+
+.insta {
+  transition: .5s;
+}
+
+.lkdn {
+  transition: .5s;
+}
+
+.fb {
+  transition: .5s;
+}
+
+.insta:hover{
+  transform: scale(1.1);
+}
+
+.lkdn:hover{
+  transform: scale(1.1);
+  transition: .5s;
+}
+
+.fb:hover{
+  transform: scale(1.1);
+  transition: .5s;
+}
+
+.containerhello {
+  display: inline-block !important;
+  margin-left: 0.5rem !important;
+  z-index: 5 !important;
+}
+.containerhello p {
+  padding: 10px !important;
+  font: 3rem Oswald, "sans-serif";
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  overflow: hidden;
+}
+.containerhello p span.typed-text {
+  font-weight: normal;
+  color: red;
+}
+.containerhello p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink-cursor 1s infinite;
+}
+.containerhello p span.cursor.typing {
+  animation: none;
+}
+
+.neonText {
+  color: #FA1C16;
+  text-shadow:
+    0 0 6px #FA1C16,
+    0 0 9px #FA1C16,
+    0 0 20px #FA1C16;
+}
+
+@keyframes blink-cursor {
+  0% {
     background-color: #ccc;
-    margin-left: 0.1rem;
-    width: 3px;
-    animation: blink 1s infinite;
   }
-  .container p span.cursor.typing {
-    animation: none;
+  49% {
+    background-color: #ccc;
   }
-  @keyframes blink {
-    0%  { background-color: #ccc; }
-    49% { background-color: #ccc; }
-    50% { background-color: transparent; }
-    99% { background-color: transparent; }
-    100%  { background-color: #ccc; }
+  50% {
+    background-color: transparent;
   }
-  
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #ccc;
+  }
+}
 
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+@keyframes typing {
+  from {
+    width: 0;
   }
+  to {
+    width: 100%;
+  }
+}
 
-  @keyframes blink {
-    from {
-      border-right: .15em solid white;
-    }
-    to {
-      border-right: .15em none white;
-    }
+@keyframes blink {
+  from {
+    border-right: 0.15em solid white;
   }
+  to {
+    border-right: 0.15em none white;
+  }
+}
+
+
+.first-card{
+  opacity: 1;
+  background-image: url("../images/bg1.jpg");
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
