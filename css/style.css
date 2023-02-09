@@ -1,10 +1,3 @@
-@font-face {
-  font-family: mustard;
-  src: url('fonts/mustard.ttf');
-}
-
-
-
 @keyframes load_in {
   0% {
     opacity: 0;
@@ -72,6 +65,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   font-size: 3em;
 }
 
+
 @keyframes move-cortina {
   to {
     transform: translateY(-100vh);
@@ -131,7 +125,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 .name-text {
   color: white;
   font-size: 70px;
-  font-family:mustard;
+  font-family:consolas;
 }
 
 .text-place {
@@ -409,7 +403,7 @@ span.typed-text {
 }
 .containerhello p {
   padding: 10px !important;
-  font: 3rem Oswald, "sans-serif";
+  font: 3rem consolas;
   font-weight: bold;
   color: white;
   letter-spacing: 0.1rem;

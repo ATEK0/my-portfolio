@@ -4,7 +4,7 @@ const cursorSpan = document.querySelector(".cursor");
 const textArray = ["a designer", "a developer", "freelancer", "devoted"];
 const typingDelay = 100;
 const erasingDelay = 100;
-const newTextDelay = 2000; // Delay between current and next text
+const newTextDelay = 2000;
 let textArrayIndex = 0;
 let charIndex = 0;
 
@@ -16,9 +16,7 @@ var cortina = document.getElementById("cortina");
 
 function incrementSeconds() {
     seconds += 1;
-    console.log(seconds)
     if (seconds == 10) {
-      console.log("entrou na funcao")
       cortina.remove();
     }
 }
