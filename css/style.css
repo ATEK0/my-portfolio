@@ -40,11 +40,24 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   font-size: 5em;
   margin: 0;
   position: relative;
-  animation: stay-white 4s, color-change 4s 2s forwards ease-in-out, blink-logo 3s 6s infinite;
+  animation: stay-white 3s, color-change 4s 2s forwards ease-in-out, blink-logo 3s 6s infinite;
 }
 
+@media only screen and (max-width: 620px) {
+  .presentation-text {
+    font-size: 2rem;
+  }
+  .present-title {
+    font-size: 2rem;
+  }
+  .typing-demo {
+    font-size: 1.5rem !important;
+  }
+} 
+
+
 .wrapper {
-  height: 100vh;
+  height: 90vh;
   display: grid;
   place-items: center;
 }
@@ -55,14 +68,14 @@ html, body {margin: 0; height: 100%; overflow: hidden}
   color: #FA1C16;
   text-shadow:
     0 0 7px #fa1e16dc,
-    0 0 10px #fa1e16c0,
+    0 0 10px #efefefc0,
     0 0 21px #fa1e1681;
-  animation: stay-white 4s,typing2 1s steps(16), blink2 .5s step-end infinite, color-change 4s 2s forwards ease-in-out, blink-logo 4s 6s infinite;
+  animation: stay-white 3s,typing2 1s steps(16), blink2 .5s step-end infinite, color-change 4s 2s forwards ease-in-out, blink-logo 4s 6s infinite;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
   font-family: monospace;
-  font-size: 3em;
+  font-size: 3rem;
 }
 
 
@@ -111,7 +124,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     color: white;
   }
 
-  50% {
+  100% {
     color: #FA1C16;
   text-shadow:
     0 0 7px #fa1e16dc,
@@ -341,15 +354,36 @@ span.typed-text {
   padding: 10px;
 }
 
-.meimg {
-  position: in;
-  z-index: 6;
-  margin-left: 55vw;
-  margin-top: -50vh;
-  z-index: 3;
-  opacity: 0.9;
-  animation: floating 9s infinite ease-in-out;
+@media only screen and (min-width: 1200px) {
+  .meimg {
+    position: inherit;
+    z-index: 6;
+    margin-left: 60vw;
+    margin-top: -30vw;
+    z-index: 3;
+    opacity: 0.9;
+    animation: floating 9s infinite ease-in-out;
+  }
 }
+
+@media only screen and (max-width: 1000px) {
+  .meimg {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .meimg {
+    position: inherit;
+    z-index: 6;
+    margin-left: 70vw;
+    margin-top: -30vw;
+    z-index: 3;
+    opacity: 0.9;
+    animation: floating 9s infinite ease-in-out;
+  }
+}
+
 
 @keyframes floating {
   0% {
@@ -364,10 +398,63 @@ span.typed-text {
 }
 
 .socials {
-  display: inline-flex;
+  display: flex;
   position: inherit;
-  z-index: 2;
+  z-index: 3;
   margin-left: 6vw;
+  width: fit-content;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.goup{
+  order: -1;
+  flex: 1 0 100%;
+}
+
+.godown{
+  order: 1;
+  flex: 1 0 100%;
+}
+
+.godown a {
+  width: fit-content !important;
+  display: block;
+}
+
+.email {
+  font-weight: bold;
+  display: block;
+  width: fit-content;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: white;
+  font-family: consolas;
+  transition: .5s;
+}
+
+.email:hover {
+  transform: scale(1.1);
+}
+
+.phone {
+  font-weight: bold;
+  display: block;
+  width: fit-content;
+  color: white;
+  font-size: 1.2rem;
+  font-family: consolas;
+  text-decoration: none;
+  transition: .5s;
+}
+
+.phone:hover {
+  transform: scale(1.1);
+}
+
+.socials:nth-last-child(2) {
+  position: relative;
+  z-index: 3;
 }
 
 .insta {
@@ -401,9 +488,31 @@ span.typed-text {
   margin-left: 0.5rem !important;
   z-index: 5 !important;
 }
+
+@media only screen and (max-width: 620px) {
+  .containerhello {
+    font-size: 1.5rem !important;
+    font-weight: bold;
+  }
+
+  .name-text {
+    font-size: 2rem !important;
+  }
+
+  .containerhello p span.typed-text {
+    font-weight: bold !important;
+  }
+
+  .containerhello p {
+    font-size: 1.5rem !important;
+    font-weight: bold;
+  }
+
+}
+
 .containerhello p {
   padding: 10px !important;
-  font: 3rem consolas;
+  font: 2.5rem consolas;
   font-weight: bold;
   color: white;
   letter-spacing: 0.1rem;

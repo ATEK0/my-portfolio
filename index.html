@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-PT">
   <head>
     <title>ATEK0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/ballons.css" />
     <link rel="stylesheet" type="text/css" href="./css/talktome.css" />
     <link rel="stylesheet" type="text/css" href="./css/modalbtn.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -38,15 +41,25 @@
           </div>
         </div>
         <div class="socials">
-          <a href="https://www.instagram.com/oafonsoalmeida/" target="_blank"><img class="insta" src="Mockup perfil/instalogo.png"/></a>
-          <a href="https://www.linkedin.com/in/afonso-almeida-b32733232/" target="_blank"><img class="lkdn" src="Mockup perfil/lnlogo.png"/></a>
-          <a href="https://www.facebook.com/profile.php?id=100012831364074" target="_blank"><img class="fb" src="Mockup perfil/logofacebook.png"/></a>
+          <a href="https://www.instagram.com/oafonsoalmeida/" target="_blank"><img class="insta goup" src="Mockup perfil/instalogo.png"/></a>
+          <a href="https://www.linkedin.com/in/afonso-almeida-b32733232/" target="_blank"><img class="lkdn goup" src="Mockup perfil/lnlogo.png"/></a>
+          <a href="https://www.facebook.com/profile.php?id=100012831364074" target="_blank"><img class="fb goup" src="Mockup perfil/logofacebook.png"/></a>
           <div data-toggle="modal" data-target="#exampleModal" class="buttontalk">Talk to me</div>
+          <div class="godown">
+            <a href="mailto: afonsoalmeida2828@gmail.com" style="text-decoration: none;color:white;"><p aria-label="Click to contact" data-balloon-pos="down-right" class="email">afonsoalmeida2828@gmail.com</p></a>
+          </div>
+          <div class="godown">
+            <a href="tel:+351 965481584" style="text-decoration: none;color:white;"><p data-balloon-visible aria-label="Click to contact" data-balloon-pos="down-left" class="phone">+351 965 481 584</p></a>
+          </div>
+          
         </div>
+          
         
         <img class="meimg" style="width: 30%;" src="images/me.png"/>
     </div>
-
+    <div class="butaotalk" style="display: flex;justify-content: center;">
+      <div data-toggle="modal" data-target="#exampleModal" class="buttontalk-movel">TALK TO ME</div>
+    </div>
 
     <!-- Modal Contact Form -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -85,10 +98,7 @@
               </div>
           </div>
 
-          <div style="margin: 10px;"class="ta-r padB150">
-            <button class="buttonmodal cancel-btn" >
-            Cancel
-            </button>
+          <div style="margin: 10px;" class="ta-r padB150">
             <button class="buttonmodal accept-btn" >
             Send
             </button>
